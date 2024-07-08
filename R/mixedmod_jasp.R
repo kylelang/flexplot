@@ -12,7 +12,7 @@
 mixedmod_jasp<- function(jaspResults, dataset, options) {
 
   ### check if they have an IV and a DV
-  ready <- options$dependent != "" && length(options$variables) > 0 && options$rvariables != ""
+  ready <- all(options$dependent != "") && length(options$variables) > 0 && all(options$rvariables != "")
   
   ### read in the dataset if it's ready
   if (ready){
